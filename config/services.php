@@ -30,4 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'packt-api' => [
+        'uri' => env('PACKT_API_URI'),
+        'token' => env('PACKT_API_TOKEN'),
+    ]
 ];
