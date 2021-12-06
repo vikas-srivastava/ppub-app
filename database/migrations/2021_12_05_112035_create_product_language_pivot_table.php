@@ -13,7 +13,7 @@ class CreateProductLanguagePivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_languages', function (Blueprint $table) {
+        Schema::create('product_language', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained();
             $table->foreignId('language_id')->constrained();

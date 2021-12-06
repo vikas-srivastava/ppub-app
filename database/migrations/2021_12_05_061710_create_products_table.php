@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
             $table->string('packtId')->unique();
             $table->string('isbn13')->unique();
             $table->string('isbn10')->unique();
-            $table->string('isbns')->unique();
 
             $table->string('title');
             $table->string('product_type');
@@ -27,12 +26,10 @@ class CreateProductsTable extends Migration
             $table->dateTime('publication_date');
             $table->string('length');
             
-
             $table->mediumText('learn');
             $table->mediumText('features');
             $table->mediumText('description');
-            $table->string('url');   
-            $table->string('expertise');
+            $table->string('url');
 
             $table->timestamps();
         });

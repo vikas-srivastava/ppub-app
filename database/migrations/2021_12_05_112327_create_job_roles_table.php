@@ -16,7 +16,7 @@ class CreateJobRolesTable extends Migration
         Schema::create('jobroles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('expertise');
+            $table->string('expertise')->nullable();
             $table->timestamps();
         });
     }

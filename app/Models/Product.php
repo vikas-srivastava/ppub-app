@@ -18,6 +18,14 @@ class Product extends Model
 
 
     /**
+     * Get the images associated with the product.
+     */
+    public function image()
+    {
+        return $this->hasOne(ProductImage::class);
+    }
+
+    /**
      * Get the prices for the product.
      */
     public function prices()
@@ -30,7 +38,7 @@ class Product extends Model
      */
     public function authors()
     {
-        return $this->belongsToMany(Author::class);
+        return $this->belongsToMany(Author::class, 'product_author');
     }
 
     /**
@@ -38,7 +46,7 @@ class Product extends Model
      */
     public function categories()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class, 'product_category');
     }
 
     /**
@@ -46,7 +54,7 @@ class Product extends Model
      */
     public function concepts()
     {
-        return $this->belongsToMany(Concept::class);
+        return $this->belongsToMany(Concept::class, 'product_concept');
     }
 
     /**
@@ -54,7 +62,7 @@ class Product extends Model
      */
     public function languages()
     {
-        return $this->belongsToMany(Language::class);
+        return $this->belongsToMany(Language::class, 'product_language');
     }
 
     /**
@@ -62,7 +70,7 @@ class Product extends Model
      */
     public function tools()
     {
-        return $this->belongsToMany(Tool::class);
+        return $this->belongsToMany(Tool::class, 'product_tool');
     }
 
     /**
@@ -70,7 +78,7 @@ class Product extends Model
      */
     public function vendors()
     {
-        return $this->belongsToMany(Vendor::class);
+        return $this->belongsToMany(Vendor::class, 'product_vendor');
     }
 
     /**
@@ -78,6 +86,6 @@ class Product extends Model
      */
     public function jobroles()
     {
-        return $this->belongsToMany(Jobrole::class);
+        return $this->belongsToMany(Jobrole::class, 'product_jobrole');
     }
 }

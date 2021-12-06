@@ -16,11 +16,11 @@ class CreatePricesTable extends Migration
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
             $table->enum('print', ['print', 'ebook']);
-            $table->string('USD');
-            $table->string('GBP');
-            $table->string('EUR');
-            $table->string('AUD');
-            $table->string('INR');
+            $table->float('USD');
+            $table->float('GBP');
+            $table->float('EUR');
+            $table->float('AUD');
+            $table->float('INR');
             $table->foreignId('product_id')->constrained();
             $table->timestamps();
         });

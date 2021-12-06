@@ -14,5 +14,13 @@ class ProductImage extends Model
      *
      * @var string
      */
-    protected $table = 'productimages';
+    protected $table = 'product_images';
+
+     /**
+     * Get the product that owns the image.
+     */
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
