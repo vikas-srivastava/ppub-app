@@ -23,4 +23,12 @@ class ProductImage extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function largeImage() {
+        return $this->large_image_url;
+    }
+
+    public function smallImage() {
+        return $this->small_image_url;
+    }
 }

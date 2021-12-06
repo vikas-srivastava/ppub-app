@@ -88,4 +88,19 @@ class Product extends Model
     {
         return $this->belongsToMany(Jobrole::class, 'product_jobrole');
     }
+
+    public function printPriceInGBP() 
+    {
+        $printPrice = $this->prices->where('print', '=', 'print')->first();
+
+        if(!$printPrice) {
+            $printPrice = $this->prices->where('print', '=', 'ebook')->first();
+        }
+        
+        if($printPrice) {
+            return '£'.$printPrice->GBP;
+        } else {
+            return 'n/a';
+        }
+    }
 }
