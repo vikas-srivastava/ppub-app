@@ -15,3 +15,4 @@ Go to terminal and run following commands
 - php artisan key:generate
 - php artisan migrate
 - php artisan packapi:fetch
+- visit http://localhost/ once fetch command done
